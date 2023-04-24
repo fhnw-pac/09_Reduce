@@ -71,7 +71,7 @@ __global__ void cudaReduceAddition(int* vectorA, int* sum)
     shmArray[threadIdx.x] = vectorA[globalIdx];
     shmArray[threadIdx.x + blockDim.x] = vectorA[globalIdx + blockDim.x];
 
-    for (int stride = blockDim.x; stride; stride >>= 1) {
+    for (int stride = blockDim.x; stride > 0; stride >>= 1) {
         if (threadIdx.x < stride) {
             shmArray[threadIdx.x] += shmArray[threadIdx.x + stride];
         }

@@ -101,6 +101,8 @@
                 "SpeedOfLight_RooflineChart",
                 "--section",
                 "WarpStateStats",
+                "--section",
+                "SourceCounters",
                 "--target-processes",
                 "all",
                 "${fileDirname}/${fileBasenameNoExtension}"
